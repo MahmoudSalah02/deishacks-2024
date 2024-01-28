@@ -1,163 +1,82 @@
-:root {
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Open Sans',
-    'Helvetica Neue',
-    sans-serif;
-
-  color-scheme: light dark;
-  background-color: #5a5a5b78;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    background-color: #fafafa;
-  }
-
-  a:hover {
-    color: #f3e5ab;
-  }
-}
-
 body {
-  min-width: 20rem;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
   margin: 0;
-}
-
-main {
   text-align: center;
-  padding: 1em;
-  margin: 0 auto;
 }
 
-h3 {
-  color: #f3e5ab;
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  font-weight: 200;
-  line-height: 1.2rem;
-  margin: 2rem auto;
-}
-
-.calc {
+.app {
+  background-color: #e0e0e0;
+  padding: 10px;
+  width: 80vw; /* Responsive width based on viewport width */
+  height: 80vw; /* Responsive height equal to width */
+  max-width: 500px; /* Maximum size limit */
+  max-height: 500px; /* Equal maximum height */
+  min-width: 500px; /* Minimum size limit */
+  min-height: 500px; /* Equal minimum height */
+  margin: 10px auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2rem;
-}
-
-button {
-  font-size: 1.2rem; /* Increase font size */
-  padding: 1rem 2rem; /* Increase padding */
-  border: 2px solid #add8e6; /* Light blue border */
-  background-color: #add8e6; /* Light blue background */
-  color: #ffffff; /* White text */
-  cursor: pointer;
-  outline: none;
-  border-radius: 0.25rem;
-  margin: 0; /* Adjust margin as needed */
-}
-
-button:hover {
-  background-color: #87ceeb; /* Slightly darker light blue for hover effect */
-}
-
-label {
-  font-size: 1.5rem;
-  margin: 0 1rem;
-}
-
-a {
-  font-size: 0.5rem;
-  margin: 0.5rem;
-  color: #cccccc;
-  text-decoration: none;
-}
-
-
-/* style.css */
-
-.popup {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(132, 141, 140, 0.325);
-  display: none;
-  justify-content: center;
+  border-radius: 8px;
+  flex-direction: column;
   align-items: center;
+  overflow: auto; /* Add scroll if content overflows */
 }
 
-.popup-content {
+.section {
   background-color: white;
-  padding: 20px;
-  border-radius: 5px;
+  width: 90%; /* Adjust the width as needed */
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  max-height: 40vh; /* Set a maximum height */
+  overflow: auto; /* Enable scrolling for overflowing content */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
-  max-width: 400px; /* Maximum width */
-  max-height: 600px; /* Maximum height */
-  overflow: auto;
 }
 
-.close-btn {
-  cursor: pointer;
-  position: absolute;
-  right: 10px;
-  top: 5px;
-  font-size: 30px;
+/* Rest of your styles (logo, title, button, etc.) remain the same */
+
+
+.logo {
+  max-width: 100px;
+  margin-bottom: 15px;
 }
 
-#generateBtn {
-  background-color: #4CAF50;
+.title {
+  margin-bottom: 10px;
+  color: #007bff; /* Blue color for the app name */
+  font-size: 1.8rem; /* Larger font size for the title */
+}
+
+.description {
+  margin-bottom: 20px;
+  font-size: 0.8rem; /* Smaller font size for the description */
+}
+
+.summary-btn {
+  background-color: #007bff;
   color: white;
   padding: 10px 20px;
-  margin: 10px 0;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#generateBtn:hover {
-  background-color: #45a049;
-}
-
-#messageElement {
-  text-align: center;
-  padding: 10px;
-  margin-top: 20px;
-  background-color: #E6F4FF;
-  color: black;
   border-radius: 5px;
-  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 20px;
 }
 
-#app {
-  display: flex; /* Establishes a flex container */
-  flex-direction: column; /* Stacks children vertically */
-  justify-content: center; /* Centers children horizontally in the container */
-  align-items: center; /* Centers children vertically in the container */
-  height: 100vh; /* Gives the container the full height of the viewport */
-  width: 100vw; /* Optional: Gives the container the full width of the viewport */
+.summary-btn:hover {
+  background-color: #0056b3;
 }
 
-#foundationLogo {
-  display: block; /* ensures the image doesn't inline with text elements */
-  max-width: 200px; /* example size, adjust as needed */
-  margin: 0; /* centers the image and adds space below */
-}
-
-#extensionName {
+.loading-message, .summary-content {
+  display: none; /* Hide by default */
   text-align: center;
-  color: #ADD8E6; /* Light blue color, adjust as needed */
-  margin: 10px 0; /* Spacing above and below the text */
-  font-size: 1.5rem; /* Adjust size as needed */
+}
+
+.summary-content {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
 }
